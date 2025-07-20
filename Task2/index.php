@@ -1,0 +1,103 @@
+<?php 
+  session_start(); 
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<header>
+        <div class="container">
+            <nav>
+
+                <img height="140" src="logo.jpg" alt="website logo">
+                    <ul>
+                        <li>
+                            Home
+                        </li>
+                        <li>
+                            <a href="#">Features</a>
+                             <div class="dropdown">
+                                <a href="Features.html">Feature One</a>
+                                <a href="Features.html">Feature Two</a>
+                                <a href="Features.html">Feature Three</a>
+                            </div> 
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                             <div class="dropdown">
+                                <a href="Services.html">Service A</a>
+                                <a href="Services.html">Service B</a>
+                            </div>
+                        </li>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to MyWebsite</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nobis voluptatem voluptas, debitis earum, eveniet praesentium facere deserunt vitae modi tempore at temporibus velit ea blanditiis facilis quia sequi unde veritatis ipsum ducimus dignissimos. In necessitatibus deleniti qui saepe aliquam.</p>
+
+        <button class="cta">Start</button>
+    </section>
+
+    <section class="feature">
+        <h1>Features</h1>
+        <div class="cards">
+            <div class="card">
+                <h2>Feature One</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="card">
+                <h2>Feature Two</h2>
+                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="card">
+                <h2>Feature Three</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="service">
+        <h1>Services</h1>
+        <div class="cards">
+            <div class="card">
+                <h2>Service One</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="card">
+                <h2>Service Two</h2>
+                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="card">
+                <h2>Service Three</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <p>&copy; 2025 MyWebsite. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a>
+        </p>
+    </footer>
+</body>
+</html>
